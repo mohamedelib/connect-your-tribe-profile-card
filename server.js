@@ -43,7 +43,11 @@ app.use(express.urlencoded({ extended: true }));
 // In je visitekaartje was dit waarschijnlijk index.html
 app.get("/", async function (request, response) {
   // Render index.liquid uit de Views map en geef de opgehaalde data mee, in een variabele genaamd person
-  response.render("index.liquid", { person: personResponseJSON.data });
+
+  const personData = personResponseJSON.data;
+  const customData = JSON.parse(personData.custom);
+
+  response.render("index.liquid", { person: personData, custom: customData });
 });
 
 // Had je meer pagina's in je oude visitekaartje? Zoals een contact.html?
@@ -59,6 +63,11 @@ app.post("/", async function (request, response) {
   // Je zou hier data kunnen opslaan, of veranderen, of wat je maar wilt
   // Er is nog geen afhandeling van een POST, dus stuur de bezoeker terug naar /
   response.redirect(303, "/");
+});
+
+app.get("/oefenen", async function (request, response) {
+  // Render practice.liquid uit de Views map en geef de opgehaalde data mee, in een variabele genaamd person
+  response.render("practice.liquid", { person: personResponseJSON.data });
 });
 
 // Stel het poortnummer in waar Express op moet gaan luisteren

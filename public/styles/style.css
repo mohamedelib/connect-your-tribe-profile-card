@@ -25,9 +25,11 @@ body {
   align-items: center;
   background-image: url("/back.png");
 }
+
+/* front and back */
 .card {
-  width: min(560px, 92vw);
-  aspect-ratio: 560 / 320;
+  width: 100%;
+  height: 100%;
 
   background:
     linear-gradient(
@@ -46,17 +48,16 @@ body {
   position: relative;
 }
 
+/* front */
+
 .front {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.back {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: 1fr auto;
-  position: relative;
-}
+
+/* content front */
+
 h1 {
   font-size: clamp(48px, 10vw, 100px);
   color: var(--heading);
@@ -64,61 +65,134 @@ h1 {
   font-family: "Inria Sans", system-ui, sans-serif;
 }
 
+/* back */
+
+.back {
+  display: grid;
+
+  /* grid-template-columns: 1fr auto; */
+  /* grid-template-rows: max-content max-content max-content 1fr max-content; */
+
+  grid-template-areas:
+    "image  "
+    "naam   "
+    "role   "
+    "squad  "
+    "contact"
+    "arab   ";
+
+  @media (width > 30em) {
+    grid-template-columns: 1fr auto;
+    grid-template-rows: max-content max-content max-content 1fr max-content;
+
+    grid-template-areas:
+      "naam    image"
+      "role    image"
+      "squad   image"
+      "contact image"
+      "arab    image";
+  }
+
+  position: relative;
+
+  color: white;
+
+  padding: 1.5em;
+}
+
+/* content back */
+
 h2 {
   font-size: clamp(18px, 4vw, 40px);
   color: var(--heading);
   margin: 0 auto;
   font-family: "Satoshi", sans-serif;
-  position: absolute;
-  left: 24px;
-  bottom: 20px;
+  /* position: absolute; */
+  /* left: 24px; */
+  /* bottom: 20px; */
   margin: 0;
+
+  grid-area: arab;
 }
 
 h3 {
-  position: absolute;
+  /* position: absolute; */
   color: var(--heading2);
   font-family: "Satoshi", sans-serif;
-  left: 24px;
-  top: 20px;
+  /* left: 24px; */
+  /* top: 20px; */
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 1.45rem;
+  font-size: 1.8rem;
+
+  font-size: clamp(1.4375rem, 1.0625rem + 1.875vw, 1.8125rem);
+
+  grid-area: naam;
 }
 
-.description {
-  position: absolute;
+.role {
+  margin: 0;
+
+  grid-area: role;
+}
+
+.squad {
+  margin: 0;
+
+  grid-area: squad;
+}
+
+ul {
+  padding: 0;
+  margin: 2em 0;
+  list-style-type: "";
+  align-self: center;
   color: var(--heading2);
-  left: 1.5rem;
-  top: 4.5rem;
-}
-
-.description p {
-  margin: 0;
   font-family: "Satoshi", sans-serif;
-  font-size: clamp(10px, 2.2vw, 16px);
-}
-.description p:first-of-type {
-  font-size: clamp(10px, 2.5vw, 20px);
-  font-weight: bold;
-}
-.name {
-  grid-column: 1;
-  grid-row: 1;
+  grid-area: contact;
+
+  @media (width > 40em) {
+    margin: 0;
+  }
 }
 
 .profile {
   width: clamp(64px, 20vw, 120px);
   height: auto;
   border-radius: 50%;
-  grid-column: 2;
-  grid-row: 1 / span 2;
-  align-self: center;
+  margin-bottom: 1em;
   outline: 3px solid var(--heading);
   outline-style: inset;
-  margin-right: 1.5rem;
+  /* margin-right: 1.5rem; */
+
+  grid-area: image;
+  align-self: center;
+  justify-self: center;
 }
 
-.location {
+/* .description {
+  position: absolute;
+  
+  left: 1.5rem;
+  top: 4.5rem;
+} */
+
+/* .description p {
+  margin: 0;
+  
+  font-size: clamp(10px, 2.2vw, 16px);
+} */
+/* .description p:first-of-type {
+  font-size: clamp(10px, 2.5vw, 20px);
+  font-weight: bold;
+} */
+
+/* .name {
+  grid-column: 1;
+  grid-row: 1;
+} */
+
+/* .location {
   color: var(--heading2);
   grid-column: 2;
   grid-row: 2;
@@ -126,7 +200,7 @@ h3 {
   font-family: "Satoshi", sans-serif;
   font-size: clamp(10px, 2.2vw, 16px);
   margin-right: 1.5rem;
-}
+} */
 
 /* -------------- */
 .card-wrapper {
@@ -141,6 +215,8 @@ h3 {
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.6s ease;
+
+  display: grid;
 }
 
 .card-wrapper:hover .card-inner {
@@ -148,12 +224,12 @@ h3 {
 }
 
 .card {
-  position: absolute;
-  inset: 0;
+  grid-area: 1/1;
+
   backface-visibility: hidden;
 }
 
-.card.back {
+.card.front {
   transform: rotateY(180deg);
 }
 

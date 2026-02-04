@@ -1,29 +1,29 @@
 {% render 'partials/head.liquid' %}
 
-<div class="card-wrapper">
+<article class="card-wrapper">
+
   <div class="card-inner">
-<div class="card front">
-  <h1>مُحَمَّد</h1>
-  
-</div>
 
-<div class="card back">
-  <h2>مُحَمَّد</h2>
+    <section class="card front">
+      <h1>مُحَمَّد</h1>
+    </section>
 
-  <img class="profile" src="https://fv5-3.files.fm/thumb_show.php?i=x83qgjxsjf&view&v=1&PHPSESSID=1cc18362ba7a86f9a1a0707013d48b7cbcd63204" alt="Foto van Mohamed" >
-  <h3 class="name">Mohamed El Ibrahymy</h3>
-  <div class="description">
-    <p> Student Front End Developer<p>
-    
-  <p><a href="https://github.com/mohamedelib">github.com/mohamedelib</a></p>
-    <p><a href="mohamed.el.ibrahymy@hva.nl">mohamed.el.ibrahymy@hva.nl</a></p>
-    <p>04-04-2005</p>
-    <p>
-      Squad: 1J</p>
+    <section class="card back">
+      <h2>مُحَمَّد</h2>
+      <h3>{{person.name}}</h3>
+      <p class="role"> Student Front End Developer</p>
+      <p class="squad">{{custom.Squad}}</p>
+
+      <ul>
+        <li><a href="https://github.com/mohamedelib">github.com/mohamedelib</a></li>
+        <li><a href="mohamed.el.ibrahymy@hva.nl">mohamed.el.ibrahymy@hva.nl</a></li>
+        <li>Purmerend, NL</li>
+      </ul> 
+
+      <img class="profile" src="https://fv5-3.files.fm/thumb_show.php?i=x83qgjxsjf&view&v=1&PHPSESSID=1cc18362ba7a86f9a1a0707013d48b7cbcd63204" alt="Foto van Mohamed" >
+    </section>
+
   </div>
-  <p class="location"> Purmerend, NL </p>
-</div>
-</div>
-</div>
+</article>
 
 {% render 'partials/foot.liquid' %}
