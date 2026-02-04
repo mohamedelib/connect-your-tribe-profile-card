@@ -68,10 +68,12 @@ h1 {
 /* back */
 
 .back {
-  display: grid;
+  position: relative;
 
-  /* grid-template-columns: 1fr auto; */
-  /* grid-template-rows: max-content max-content max-content 1fr max-content; */
+  color: white;
+
+  padding: 1.5em;
+  display: grid;
 
   grid-template-areas:
     "image  "
@@ -92,12 +94,6 @@ h1 {
       "contact image"
       "arab    image";
   }
-
-  position: relative;
-
-  color: white;
-
-  padding: 1.5em;
 }
 
 /* content back */
@@ -107,20 +103,14 @@ h2 {
   color: var(--heading);
   margin: 0 auto;
   font-family: "Satoshi", sans-serif;
-  /* position: absolute; */
-  /* left: 24px; */
-  /* bottom: 20px; */
   margin: 0;
 
   grid-area: arab;
 }
 
 h3 {
-  /* position: absolute; */
   color: var(--heading2);
   font-family: "Satoshi", sans-serif;
-  /* left: 24px; */
-  /* top: 20px; */
   margin: 0;
   font-size: 1.45rem;
   font-size: 1.8rem;
@@ -163,44 +153,11 @@ ul {
   margin-bottom: 1em;
   outline: 3px solid var(--heading);
   outline-style: inset;
-  /* margin-right: 1.5rem; */
 
   grid-area: image;
   align-self: center;
   justify-self: center;
 }
-
-/* .description {
-  position: absolute;
-  
-  left: 1.5rem;
-  top: 4.5rem;
-} */
-
-/* .description p {
-  margin: 0;
-  
-  font-size: clamp(10px, 2.2vw, 16px);
-} */
-/* .description p:first-of-type {
-  font-size: clamp(10px, 2.5vw, 20px);
-  font-weight: bold;
-} */
-
-/* .name {
-  grid-column: 1;
-  grid-row: 1;
-} */
-
-/* .location {
-  color: var(--heading2);
-  grid-column: 2;
-  grid-row: 2;
-  justify-self: center;
-  font-family: "Satoshi", sans-serif;
-  font-size: clamp(10px, 2.2vw, 16px);
-  margin-right: 1.5rem;
-} */
 
 /* -------------- */
 .card-wrapper {
