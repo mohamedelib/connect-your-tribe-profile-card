@@ -26,6 +26,30 @@ body {
   background-image: url("/back.png");
 }
 
+/* typografie */
+
+h1 {
+  font-size: clamp(48px, 10vw, 100px);
+  color: var(--heading);
+  font-family: "Inria Sans", system-ui, sans-serif;
+}
+
+h2 {
+  font-size: clamp(18px, 4vw, 40px);
+  color: var(--heading);
+  font-family: "Satoshi", sans-serif;
+}
+
+h3 {
+  color: var(--heading2);
+  font-family: "Satoshi", sans-serif;
+  font-size: clamp(1.4375rem, 1.0625rem + 1.875vw, 1.8125rem);
+}
+
+ul {
+  color: var(--heading2);
+  font-family: "Satoshi", sans-serif;
+}
 /* front and back */
 .card {
   width: 100%;
@@ -59,19 +83,14 @@ body {
 /* content front */
 
 h1 {
-  font-size: clamp(48px, 10vw, 100px);
-  color: var(--heading);
   margin: 0;
-  font-family: "Inria Sans", system-ui, sans-serif;
 }
 
 /* back */
 
 .back {
   position: relative;
-
   color: white;
-
   padding: 1.5em;
   display: grid;
 
@@ -99,23 +118,13 @@ h1 {
 /* content back */
 
 h2 {
-  font-size: clamp(18px, 4vw, 40px);
-  color: var(--heading);
   margin: 0 auto;
-  font-family: "Satoshi", sans-serif;
-  margin: 0;
 
   grid-area: arab;
 }
 
 h3 {
-  color: var(--heading2);
-  font-family: "Satoshi", sans-serif;
   margin: 0;
-  font-size: 1.45rem;
-  font-size: 1.8rem;
-
-  font-size: clamp(1.4375rem, 1.0625rem + 1.875vw, 1.8125rem);
 
   grid-area: naam;
 }
@@ -137,8 +146,6 @@ ul {
   margin: 2em 0;
   list-style-type: "";
   align-self: center;
-  color: var(--heading2);
-  font-family: "Satoshi", sans-serif;
   grid-area: contact;
 
   @media (width > 40em) {
