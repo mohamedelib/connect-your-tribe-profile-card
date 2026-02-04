@@ -1,1 +1,7 @@
-<h1> YO </h1>
+<h1>Data-Driven Web</h1>
+<p>Ik ben dus {{ person.name | upcase  }}</p>
+<p>Het is vandaag {{ "now" | date: "%Y-%m-%d %H:%M" }}</p>
+<p> Ik ben jarig op {{ person.birthdate | split }}
+
+
+<details><summary>Data</summary><pre>{{ person | json:4 }}</pre></details>
