@@ -180,6 +180,7 @@ ul {
   &:hover {
     cursor: pointer;
     scale: 1.4;
+    transition: scale 0.3s ease-in-out;
   }
 }
 
