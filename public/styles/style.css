@@ -195,7 +195,7 @@ ul {
   }
 }
 
-.card-wrapper:hover .card-inner .card-wrapper:focus .card-inner,
+.card-wrapper:hover .card-inner,
 .card-wrapper:focus-within .card-inner {
   transform: rotateY(180deg);
 }
