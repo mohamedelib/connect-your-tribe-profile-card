@@ -109,7 +109,7 @@ h1 {
     "arab   ";
 
   @media (width > 30em) {
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr 0.5fr;
     grid-template-rows: max-content max-content max-content 1fr max-content;
 
     grid-template-areas:
@@ -136,6 +136,7 @@ h3 {
 }
 
 .role {
+  font-weight: bold;
   margin: 0;
 
   grid-area: role;
@@ -199,7 +200,7 @@ ul {
   backface-visibility: hidden;
 }
 
-.card.front {
+.card.back {
   transform: rotateY(180deg);
 }
 
