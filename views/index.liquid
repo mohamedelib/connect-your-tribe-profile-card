@@ -1,14 +1,14 @@
 {% render 'partials/head.liquid' %}
 
-<article class="card-wrapper" tabindex="0">
+<div class="card-wrapper" tabindex="0">
 
   <div class="card-inner">
 
-    <section class="card front">
+    <div class="card front">
       <h1>مُحَمَّد</h1>
-    </section>
+    </div>
 
-    <section class="card back">
+    <div class="card back">
       <h2>مُحَمَّد</h2>
       <h3>{{person.name}}</h3>
       <p class="role"> {{custom.Role}}</p>
@@ -16,15 +16,15 @@
 
       <ul>
         <li><a href="https://github.com/{{ person.github_handle }}">Github : {{ person.github_handle }}</a></li>
-        <li><a href="{{ custom.email }}">mohamed.el.ibrahymy@hva.nl</a></li>
+        <li><a href="{{ custom.Email }}">{{ custom.Email }}</a></li>
         <li> {{ person.bio }}</li>
         <li>{{custom.Location}}</li>
       </ul> 
 
       <img class="profile" src="{{ person.avatar }}" alt="Foto van Mohamed" >
-    </section>
+    </div>
     
   </div>
-</article>
+</div>
 <button class="visually-hidden">Sluiten</button>
 {% render 'partials/foot.liquid' %}
