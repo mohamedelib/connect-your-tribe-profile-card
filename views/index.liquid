@@ -1,29 +1,30 @@
 {% render 'partials/head.liquid' %}
 
-<div class="card-wrapper" >
-
+<div class="card-wrapper">
   <div class="card-inner">
-
     <div class="card front">
       <h1>مُحَمَّد</h1>
     </div>
 
     <div class="card back">
       <h2>مُحَمَّد</h2>
-      <h3>{{person.name}}</h3>
-      <p class="role"> {{custom.Role}}</p>
-      <p class="squad">Squad: {{custom.Squad}}</p>
+      <h3>{{ person.name }}</h3>
+      <p class="role">{{ custom.Role }}</p>
+      <p class="squad">Squad: {{ custom.Squad }}</p>
 
       <ul>
-        <li><a href="https://github.com/{{ person.github_handle }}">Github : {{ person.github_handle }}</a></li>
-        <li><a href="{{ custom.Email }}">{{ custom.Email }}</a></li>
-        <li> {{ person.bio }}</li>
-        <li>{{custom.Location}}</li>
-      </ul> 
+        <li>
+          <a href="https://github.com/{{ person.github_handle }}">Github : {{ person.github_handle }}</a>
+        </li>
+        <li>
+          <a href="{{ custom.Email }}">{{ custom.Email }}</a>
+        </li>
+        <li>{{ person.bio }}</li>
+        <li>{{ custom.Location }}</li>
+      </ul>
 
-      <img class="profile" src="{{ person.avatar }}" alt="Foto van Mohamed" >
+      <img class="profile" src="/assets/mo.jpg" alt="Foto van Mohamed">
     </div>
-    
   </div>
 </div>
 
